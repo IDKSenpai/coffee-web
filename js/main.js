@@ -118,7 +118,8 @@
 })(jQuery);
 
 // Auto-reload page when updates are detected on the server (git pull / deployment)
-(function () {
+(function() {
+    console.log("Auto-reload script version 1.1 active...");
     let currentETag = null;
 
     async function checkVersion() {
