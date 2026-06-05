@@ -11,6 +11,9 @@ jobs:
     steps:
       - name: Deploy on VM
         run: |
-          cd ../../../coffee-web
+          # GitHub Actions runs this script in a deep _work folder.
+          # We use $RUNNER_WORKSPACE to find the runner's root folder, then go to the sibling coffee-web folder.
+          RUNNER_ROOT=$(echo $RUNNER_WORKSPACE | sed 's|/_work.*||')
+          cd $RUNNER_ROOT/../coffee-web
           git pull origin main
           docker compose up -d --build
