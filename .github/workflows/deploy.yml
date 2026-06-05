@@ -16,4 +16,4 @@ jobs:
           RUNNER_ROOT=$(echo $RUNNER_WORKSPACE | sed 's|/_work.*||')
           cd $RUNNER_ROOT/../coffee-web
           git pull origin main
-          sudo docker compose up -d
+          docker compose up -d
