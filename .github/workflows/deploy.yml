@@ -11,6 +11,6 @@ jobs:
     steps:
       - name: Deploy on VM
         run: |
-          cd ../coffee-web
+          cd ../../../coffee-web
           git pull origin main
           docker compose up -d --build
